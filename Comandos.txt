@@ -1,0 +1,85 @@
+-----------GIT CONTROL DE VERSIONES---------
+-----------Estructura-----------------------
+Espacio Local ----> Area de preparacion ---> Repositorio 
+
+1. INICIALIZAR PROYECTO DESDE EL LOCAL (crear Repositorio)
+nos ubicamos en la raiz del directorio 1
+--git init ----> se inicializa repositorio y area de preparacion
+--git add nombre archivo(readme.txt) -----> Se pasa el archivo de local a area
+ de preparacion.
+-- git status ---> permite verificar el estado del repositorio permite ver 
+los cambios echos y que estan listos en el area de preparacion.
+ 
+--git commit -m "Archivo Readme del Proyecto"---> enviar lo que esta en el area de 
+preparasion al repositorio tambien da informacion del hash y ademas muestra los
+archivos que se crean y que se cambian.
+
+git commit -am "añadir" ----> añade y crea en un solo comit solo funciona para archivos
+que antes se le haya colocado git add
+
+---git status --> Tambien avisa si faltan carpetas por subir al area de preparion
+y ademas muestra si se ah modificado un archivo ya existente dentro del repo
+
+
+--------- Modificar archivo---------
+1.git add readme.txt-----> se pasa a area de preparacion.
+-------git status este nos vaisa si esta modificado------
+2.git commit readme.txt -m "Nuevo archivo update"---> luego al repositorio 
+y se modifica solo. ----> al hacer modificaciones este crea una nueva 
+version con un nuevo hash 
+ 
+---git log ---> historial de versiones 
+git diff <id_commit2>..<id_commit1> ----> diferenciar comits con id 
+ 
+git commit --amend -m "nuevo mensaje" ---->Permite cambiar el mensaje del comit
+
+git commit --amend -no-edit ---->permite modificar los archivos 
+sin cambiar el mensaje pero antes de debn hacer los cambios en el archivo desde
+el local.
+
+git log --oneline  -->Permite ver los comits realizados (versiones head en donde me encuentro ubicaddo)
+
+----Devolverse a una version anterior----
+git checkout id_commit
+
+git show ver cambios entre versiones 
+git add . ----> guardar todos los cambios
+git reset idcomit --->resetear cambios cuidado puede elmiminar todo revisar bien a que version se quiere regresar 
+git branch ---> ver rama
+ 
+-----Deshacer cambios en la copia de trabajo local ----
+git checkout HEAD ruta_archivo
+---------------------------------------------------------------------------
+--------------------------Configurar cuentas en git ---------------------
+git config --global user.name "su_nombre"
+git config --global user.email su_correo@example.com
+git config --global github.user myusername
+git config --global github.token mytoken
+git config --list ---> verificar cuentas 
+----------------------------------------------------------------------------
+---------------------------Git Hub -----------------------------------------
+----------------------------------------------------------------------------
+git clone url ----> permite crear una copia local del repositorio
+git remote -v ----> muestra la localisacion del repositorio remoto (origin)
+git remote rename nombre new nombre ----> Cambiar nombre del repositorio remoto
+git push ---> envia al repositorio remoto 
+git pull ---> actualiza cambios desde el remoto al local 
+git diff master repo_remoto/master identificar cambios del repositorio local
+al remoto a=local b=remoto
+git status remote ----> ver si hay actualizaiones en remoto
+----------------------------Congiguracion de acces token en caso de error 403-----
+ DavidMesa12 ----> token de acceso personal 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
+ git remote set-url origin https://[githubtoken]@github.com/[username]/[repositoryname].git
+
+--------------------Saber que rama esta activa ------------------------
+git branch --merged
+
+-------------------Creacion de ramas--------------------------------------
+git branch nombreRama ---> crear rama
+git branch --->verificar ramas
+git checkout nombreRama ----> Moverse entre ramas 
+--------------------unir ramas ah merge------------
+1. me muevo a la rama que quiero unirle  cambios (git checkout master)
+2. git merge nombreotraRama
+
+   
